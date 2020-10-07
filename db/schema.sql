@@ -9,7 +9,7 @@ CREATE TABLE users(
 
 CREATE TABLE images(
   id INTEGER(11) AUTO_INCREMENT NOT NULL,
-  genre_tag INTEGER(11),
+  genre_tag VARCHAR(45),
   image BLOB,
   PRIMARY KEY (id)
 );
@@ -17,5 +17,6 @@ CREATE TABLE images(
 CREATE TABLE leaderboard(
   id INTEGER(11) AUTO_INCREMENT NOT NULL,
   score INT,
+  userid INTEGER(11),
   PRIMARY KEY (id)
 );
