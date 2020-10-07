@@ -15,7 +15,8 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 // Import routes.
-const routes = require("./controllers/controller");
+var routes = require("./controllers/controller");
+
 app.use(routes);
 
 app.listen(PORT, function() {
