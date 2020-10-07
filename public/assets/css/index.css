@@ -38,7 +38,13 @@ li {
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
+    width: 25%;
+    height: fit-content;
+    display: list-item;
+  }
+
+  label {
+      margin: 20px;
   }
   
   /* The Close Button */
