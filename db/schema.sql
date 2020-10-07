@@ -7,10 +7,10 @@ CREATE TABLE users(
   PRIMARY KEY (id)
 );
 
-CREATE TABLE images(
+CREATE TABLE board(
   id INTEGER(11) AUTO_INCREMENT NOT NULL,
-  genre_tag VARCHAR(45),
-  image BLOB,
+  img_loc varchar(255),
+  img_part varchar(45),
   PRIMARY KEY (id)
 );
 
