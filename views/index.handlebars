@@ -16,12 +16,33 @@
 
         <div class="menu-options">
             <ul>
-                <li><button id="create-account-button">Create Account</button></li>
+                <li><button id="create-account-button" class="start">Create Account</button></li>
                 <li><button id="login-button">Login</button></li>
             </ul>
         </div>
 
     </div>
+
+    <!-- Create Account Modal -->
+    <div id="create-account-modal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Create Account</h3>
+            <form action="">
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="new-email">
+                <label for="username">Username:</label>
+                <input type="text" name="username" id="username">
+                <label for="password">Password:</label>
+                <input type="password" id="pwd" name="pwd">
+                <button id="create-submit-button">Create Account</button>
+            </form>
+        </div>
+
+    </div>
+
 
 </section>
 

@@ -26,7 +26,7 @@ function shuffle(array) {
 
 // Temp set up to code front end
 router.get("/", function(request, response) {
-    response.render("gameboard");
+    response.render("index");
 });
 
 router.get("/gameboard", function(request, response) {
