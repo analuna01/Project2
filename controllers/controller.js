@@ -4,7 +4,7 @@ var router = express.Router();
 
 // Temp set up to code front end
 router.get("/", function(request, response) {
-    response.render("gameboard");
+    response.render("index");
 });
 
 
