@@ -6,8 +6,9 @@ $.ajax({
   success: function (animal) {
     console.log(animal);
     var image = document.getElementById("img1");
-    image.setAttribute("src", animal.url);
-    image.setAttribute("style", "width: 256px;");
+    //The code bellow throws errors of undefined
+    // image.setAttribute("src", animal.url);
+    // image.setAttribute("style", "width: 256px;");
   },
 });
 
