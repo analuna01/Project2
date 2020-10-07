@@ -35,7 +35,9 @@ router.get("/gameboard", function(request, response) {
         var hbsObject = {
           board: data
         };
+        shuffle(hbsObject);
         console.log(hbsObject);
+        
 
     response.render("board");
 });
