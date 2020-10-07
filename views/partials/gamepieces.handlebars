@@ -1,11 +1,8 @@
-<li>
-	{{burger_name}}
+<div>
+	{{gameCard}}
 
-	{{#if devoured}}
-	<button class="change-devoured" data-id="{{id}}" data-eatburger="{{burger_name}}" data-newdevoured="{{devoured}}">
-		Devour!
-	</button>
+	{{#if flag}}
+	<img id="img1" src="" alt="card">
 	{{/if}}
 
-	{{!-- <button class="delete-burger" data-id="{{this.id}}">DELETE!</button> --}}
-</li>
+</div>
