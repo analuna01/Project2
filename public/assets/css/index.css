@@ -22,7 +22,7 @@ li {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
+    padding-top: 200px; /* Location of the box */
     left: 0;
     top: 0;
     width: 100%; /* Full width */
@@ -32,19 +32,30 @@ li {
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
   }
   
-  /* Modal Content */
   .modal-content {
     background-color: #fefefe;
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
     width: 25%;
-    height: fit-content;
-    display: list-item;
+    height: max-content;
+    text-align: center;
+  }
+  label {
+    margin-right: 15px;
   }
 
-  label {
-      margin: 20px;
+  .form-field {
+    margin-top: 20PX;
+  }
+
+  .button-div {
+    margin-top: 20px;
+    display: inline-block;
+  }
+
+  #cancel-button {
+    margin-left: 30px;
   }
   
   /* The Close Button */
@@ -60,4 +71,15 @@ li {
     color: #000;
     text-decoration: none;
     cursor: pointer;
+  }
+
+
+  input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
   }

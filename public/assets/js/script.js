@@ -14,7 +14,7 @@ $.ajax({
 
 
 $(function() {
-    
+    // Display account create modal on click
     $('#create-account-button').on('click', function() {
         $('.modal').css('display', 'block');
     });

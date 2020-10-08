@@ -31,13 +31,22 @@
             <span class="close">&times;</span>
             <h3>Create Account</h3>
             <form action="">
-                <label for="email">Email:</label>
-                <input type="email" name="email" id="new-email">
-                <label for="username">Username:</label>
-                <input type="text" name="username" id="username">
-                <label for="password">Password:</label>
-                <input type="password" id="pwd" name="pwd">
-                <button id="create-submit-button">Create Account</button>
+                <div class="email-div form-field">
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="new-email">
+                </div>
+                <div class="username-div form-field">
+                    <label for="username">Username:</label>
+                    <input type="text" name="username" id="username">
+                </div>
+                <div class="password-div form-field">
+                    <label for="password">Password:</label>
+                    <input type="password" id="pwd" name="pwd">
+                </div>
+                <div class="button-div form-field">
+                    <button class="modal-buttons" id="create-submit-button">Create Account</button>
+                    <button class="modal-buttons" id="cancel-button">Cancel</button>
+                </div>
             </form>
         </div>
 
