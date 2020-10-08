@@ -15,30 +15,65 @@ $.ajax({
 
 $(function() {
     // Display account create modal on click
-    $('#create-account-button').on('click', function() {
+    $('#create-account-button').on('click', function(event) {
+        event.preventDefault();
         $('.create-modal').css('display', 'block');
         console.log('Modal Open');
+
+        $('.cancel-button').on('click', function(event) {
+          event.preventDefault();
+          $('.create-modal').css('display', 'none');
+          console.log('Modal closed');
+      });
     });
+    
+    // $('.cancel-button').on('click', function(event) {
+    //     event.preventDefault();
+    //     $('.create-modal').css('display', 'none');
+    //     console.log('Modal closed');
+    // });
 
-    function validatePassword() {
-      // var password = $('#create-pwd').val();
-      // var confirmPasssword = $('#confirm-pwd').val();
+    $("#create-submit-button").click(function (event) {
+      event.preventDefault();
 
-      console.log('Password test- New Password: ' + password + 'Confirm:' + confirmPasssword);
-    }
-
-    $("#create-submit-button").click(function () {
+      var email = $("#new-email").val();
+      var username = $("#create-username").val();
       var password = $("#create-pwd").val();
       var confirmPassword = $("#confirm-pwd").val();
+
       if (password != confirmPassword) {
           alert("Passwords do not match.");
           return false;
       }
-      return true;
+
+      var newUser = {
+        email: email,
+        username: username,
+        password: password
+      }
+      
+      $.ajax("/api/user", {
+        type: postMessage,
+        data: newUser
+      })
+      .then(function(){
+        console.log('New User Sent');
+        $('.create-modal').css('display', 'none');
+      });
+
     });
-    
+
+
+    // Log in button functionality
     $('#login-button').on('click', function() {
         $('.login-modal').css('display', 'block');
+        console.log('Modal Open');
+
+        $('.cancel-button').on('click', function(event) {
+          event.preventDefault();
+          $('.login-modal').css('display', 'none');
+          console.log('Modal closed');
+      });
     });
     
 
