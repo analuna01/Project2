@@ -3,6 +3,10 @@ header {
   text-align: center;
 }
 
+.landing {
+  text-align: center;
+}
+
 button {
 background-color: #4CAF50; /* Green */
 border: none;

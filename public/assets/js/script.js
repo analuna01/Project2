@@ -17,6 +17,24 @@ $(function() {
     // Display account create modal on click
     $('#create-account-button').on('click', function() {
         $('.create-modal').css('display', 'block');
+        console.log('Modal Open');
+    });
+
+    function validatePassword() {
+      // var password = $('#create-pwd').val();
+      // var confirmPasssword = $('#confirm-pwd').val();
+
+      console.log('Password test- New Password: ' + password + 'Confirm:' + confirmPasssword);
+    }
+
+    $("#create-submit-button").click(function () {
+      var password = $("#create-pwd").val();
+      var confirmPassword = $("#confirm-pwd").val();
+      if (password != confirmPassword) {
+          alert("Passwords do not match.");
+          return false;
+      }
+      return true;
     });
     
     $('#login-button').on('click', function() {
