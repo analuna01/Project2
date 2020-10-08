@@ -8,11 +8,13 @@
         </header>
     </div>
 
-    <div class="div-mainmenu">
+    <section class="landing">
+        <div>
 
-        <div class="menu-title">
-            <h3>Main Menu</h3>
         </div>
+    </section>
+
+    <div class="div-mainmenu">
 
         <div class="menu-options">
             <ul>
@@ -24,7 +26,7 @@
     </div>
 
     <!-- Create Account Modal -->
-    <div id="create-account-modal" class="modal">
+    <div id="create-account-modal" class="create-modal">
 
         <!-- Modal content -->
         <div class="modal-content">
@@ -45,6 +47,31 @@
                 </div>
                 <div class="button-div form-field">
                     <button class="modal-buttons" id="create-submit-button">Create Account</button>
+                    <button class="modal-buttons" id="cancel-button">Cancel</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+    
+    <!-- Log-in Modal -->
+    <div id="create-account-modal" class="login-modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Log-In</h3>
+            <form action="">
+                <div class="username-div form-field">
+                    <label for="username">Username:</label>
+                    <input type="text" name="username" id="username">
+                </div>
+                <div class="password-div form-field">
+                    <label for="password">Password:</label>
+                    <input type="password" id="pwd" name="pwd">
+                </div>
+                <div class="button-div form-field">
+                    <button class="modal-buttons" id="create-submit-button">Log-In</button>
                     <button class="modal-buttons" id="cancel-button">Cancel</button>
                 </div>
             </form>

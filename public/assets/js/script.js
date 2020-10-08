@@ -16,7 +16,11 @@ $.ajax({
 $(function() {
     // Display account create modal on click
     $('#create-account-button').on('click', function() {
-        $('.modal').css('display', 'block');
+        $('.create-modal').css('display', 'block');
+    });
+    
+    $('#login-button').on('click', function() {
+        $('.login-modal').css('display', 'block');
     });
     
 
