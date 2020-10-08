@@ -23,16 +23,11 @@ $(function() {
         $('.cancel-button').on('click', function(event) {
           event.preventDefault();
           $('.create-modal').css('display', 'none');
+          $('.login-modal').css('display', 'none');
           console.log('Modal closed');
       });
     });
     
-    // $('.cancel-button').on('click', function(event) {
-    //     event.preventDefault();
-    //     $('.create-modal').css('display', 'none');
-    //     console.log('Modal closed');
-    // });
-
     $("#create-submit-button").click(function (event) {
       event.preventDefault();
 
@@ -52,8 +47,8 @@ $(function() {
         password: password
       }
       
-      $.ajax("/api/user", {
-        type: postMessage,
+      $.ajax("/api/users", {
+        type: "POST",
         data: newUser
       })
       .then(function(){
@@ -63,21 +58,11 @@ $(function() {
 
     });
 
-
     // Log in button functionality
     $('#login-button').on('click', function() {
         $('.login-modal').css('display', 'block');
         console.log('Modal Open');
-
-        $('.cancel-button').on('click', function(event) {
-          event.preventDefault();
-          $('.login-modal').css('display', 'none');
-          console.log('Modal closed');
-      });
     });
     
 
 });
-
-
-
