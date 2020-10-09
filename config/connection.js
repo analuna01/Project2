@@ -4,7 +4,6 @@ var Sequelize = require("sequelize");
 var sequelize = new Sequelize("memory_db", "root", "root", {
   host: "localhost",
   port: 3306,
-  port: 3000,
   dialect: "mysql",
   pool: {
     max: 5,
