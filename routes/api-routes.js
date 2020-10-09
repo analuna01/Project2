@@ -2,7 +2,6 @@ var db = require("../models");
 
 module.exports = function (app) {
 
-<<<<<<< HEAD
     // create a user
     app.post('/api/user', (req, res) => {
         db.user.create(req.body)
@@ -12,7 +11,6 @@ module.exports = function (app) {
     app.get('/api/user', (req, res) => {
         db.user.findAll().then(users => res.json(users))
     })
-=======
     //returns the board table
     app.get("/api/board", function (req, res) {
         db.board.findAll({}).then(function (results) {
@@ -30,5 +28,4 @@ module.exports = function (app) {
         })
     })
 
->>>>>>> 21426175094aaf5711fb958085dd180e39e3f0c7
 };
