@@ -1,3 +1,5 @@
+// AJAX calls to choose category of memory game and pictures to display:
+
 $(document).ready(function () {
     $(".start").on("click", function (event) {
         event.preventDefault();
@@ -5,14 +7,14 @@ $(document).ready(function () {
         // var image = $("#imageCategory").val();
         var apiKey = "18605581-58ec698117cf49e422fb065c5";
 
-        // AJAX for Animals Category:
+        // AJAX for Travel Category:
 
         $.ajax({
             url: `https://pixabay.com/api/?key=${apiKey}&q=travel&image_type=photo`,
             method: "GET",
             "resize": {
-                "width": 100,
-                "height": 75,
+                "width": 160,
+                "height": 160,
                 "strategy": "crop"
             }
         }).then(function (response) {
@@ -22,45 +24,45 @@ $(document).ready(function () {
 
         // // AJAX for Food Category:
 
-        // $.ajax({
-        //     url: "https://pixabay.com/api/" + encodeURIComponent(image) + ",Burundi&appid=" + apiKey,
-        //     method: "GET",
-        //     "resize": {
-        //         "width": 100,
-        //         "height": 75,
-        //         "strategy": "crop"
-        //     }
-        // }).then(function (response) {
+        $.ajax({
+            url: `https://pixabay.com/api/?key=${apiKey}&q=food&image_type=photo`,
+            method: "GET",
+            "resize": {
+                "width": 160,
+                "height": 160,
+                "strategy": "crop"
+            }
+        }).then(function (response) {
 
-        // })
+        })
 
-        // // AJAX for Science Category:
+        // // AJAX for Animals Category:
 
-        // $.ajax({
-        //     url: "https://pixabay.com/api/" + encodeURIComponent(image) + ",Burundi&appid=" + apiKey,
-        //     method: "GET",
-        //     "resize": {
-        //         "width": 100,
-        //         "height": 75,
-        //         "strategy": "crop"
-        //     }
-        // }).then(function (response) {
+        $.ajax({
+            url: `https://pixabay.com/api/?key=${apiKey}&q=animals&image_type=photo`,
+            method: "GET",
+            "resize": {
+                "width": 160,
+                "height": 160,
+                "strategy": "crop"
+            }
+        }).then(function (response) {
 
-        // })
+        })
 
         // // AJAX for Sports Category:
 
-        // $.ajax({
-        //     url: "https://pixabay.com/api/" + encodeURIComponent(image) + ",Burundi&appid=" + apiKey,
-        //     method: "GET",
-        //     "resize": {
-        //         "width": 100,
-        //         "height": 75,
-        //         "strategy": "crop"
-        //     }
-        // }).then(function (response) {
+        $.ajax({
+            url: `https://pixabay.com/api/?key=${apiKey}&q=sports&image_type=photo`,
+            method: "GET",
+            "resize": {
+                "width": 160,
+                "height": 160,
+                "strategy": "crop"
+            }
+        }).then(function (response) {
 
-        // })
+        })
 
 
     })

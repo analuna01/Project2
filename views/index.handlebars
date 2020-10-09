@@ -8,10 +8,13 @@
         </header>
     </div>
 
-    <div class="div-mainmenu">
+    <section class="landing">
+        
+    </section>
 
-        <div class="menu-title">
-            <h3>Main Menu</h3>
+    <div class="div-mainmenu">
+        <div>
+            <p>Creating an account is free, easy, and allows you to save your high-scores!</p>
         </div>
 
         <div class="menu-options">
@@ -24,20 +27,56 @@
     </div>
 
     <!-- Create Account Modal -->
-    <div id="create-account-modal" class="modal">
+    <div id="create-account-modal" class="create-modal">
 
         <!-- Modal content -->
         <div class="modal-content">
-            <span class="close">&times;</span>
             <h3>Create Account</h3>
             <form action="">
-                <label for="email">Email:</label>
-                <input type="email" name="email" id="new-email">
-                <label for="username">Username:</label>
-                <input type="text" name="username" id="username">
-                <label for="password">Password:</label>
-                <input type="password" id="pwd" name="pwd">
-                <button id="create-submit-button">Create Account</button>
+                <div class="email-div form-field">
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="new-email">
+                </div>
+                <div class="username-div form-field">
+                    <label for="username">Username:</label>
+                    <input type="text" name="username" id="create-username">
+                </div>
+                <div class="password-div form-field">
+                    <label for="password">Password:</label>
+                    <input type="password" id="create-pwd" name="pwd">
+                </div>
+                <div class="password-confirm-div form-field">
+                    <label for="password">Confirm Password:</label>
+                    <input type="password" id="confirm-pwd" name="pwd">
+                </div>
+                <div class="button-div form-field">
+                    <button class="modal-buttons" id="create-submit-button">Create Account</button>
+                    <button class="modal-buttons cancel-button">Cancel</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+    
+    <!-- Log-in Modal -->
+    <div id="create-account-modal" class="login-modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <h3>Log-In</h3>
+            <form action="">
+                <div class="username-div form-field">
+                    <label for="username">Username:</label>
+                    <input type="text" name="username" id="login-username">
+                </div>
+                <div class="password-div form-field">
+                    <label for="password">Password:</label>
+                    <input type="password" id="login-pwd" name="pwd">
+                </div>
+                <div class="button-div form-field">
+                    <button class="modal-buttons" id="login-submit-button">Log-In</button>
+                    <button class="modal-buttons cancel-button">Cancel</button>
+                </div>
             </form>
         </div>
 
