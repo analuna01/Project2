@@ -33,7 +33,13 @@ module.exports = function (app) {
     })
     // get all users
     app.get('/api/user', (req, res) => {
-        db.user.findAll().then(users => res.json(users))
+        console.log(req.body);
+        db.user.findAll({
+            where: {
+                username: req.body.username,
+                password: req.body.password
+            }
+        }).then(users => res.json(users))
     })
 
 };
