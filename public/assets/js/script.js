@@ -1,16 +1,17 @@
+// This code may not get used...
 
-$.ajax({
-  url: "https://ws.adanta.mx/api/animals/ById/1",
-  type: "GET",
-  dataType: "json",
-  success: function (animal) {
-    console.log(animal);
-    var image = document.getElementById("img1");
-    //The code bellow throws errors of undefined
-    // image.setAttribute("src", animal.url);
-    // image.setAttribute("style", "width: 256px;");
-  },
-});
+// $.ajax({
+//   url: "https://ws.adanta.mx/api/animals/ById/1",
+//   type: "GET",
+//   dataType: "json",
+//   success: function (animal) {
+//     console.log(animal);
+//     var image = document.getElementById("img1");
+//     //The code bellow throws errors of undefined
+//     // image.setAttribute("src", animal.url);
+//     // image.setAttribute("style", "width: 256px;");
+//   },
+// });
 
 
 $(function() {
@@ -63,6 +64,9 @@ $(function() {
         username: username,
         password: password
       }
+
+      console.log(newUser);
+
       // Post Request to send new user data
       $.ajax("/api/users", {
         type: "POST",
@@ -70,6 +74,7 @@ $(function() {
       })
       .then(function(){
         console.log('New User Sent');
+        $('#new-account-form').reset();
         $('.create-modal').css('display', 'none');
       });
 
@@ -82,30 +87,38 @@ $(function() {
     });
 
     // Existing user creation
-    $("#create-submit-button").click(function (event) {
+    $("#login-submit-button").click(function (event) {
       event.preventDefault();
 
-      var username = $("#create-username").val();
-      var password = $("#create-pwd").val();
+      var username = $("#login-username").val();
+      var password = $("#login-pwd").val();
 
-      if (password != confirmPassword) {
-          alert("Passwords do not match.");
-          return false;
+      if (username === "") {
+        alert("Username cannot be blank.");
+        return false;
       }
 
+      if (password === "") {
+          alert("Passwords is blank.");
+          return false;
+      }
+      
       var existingUser = {
         username: username,
         password: password
       }
+
+      console.log(existingUser);
 
       // Post Request to send new user data
       $.ajax("/api/users", {
         type: "GET",
         data: existingUser
       })
-      .then(function(){
-        console.log('New User Sent');
-        $('.create-modal').css('display', 'none');
+      .then(function(response){
+        console.log('User Logged in as: ' + response);
+        $('#login-form').reset();
+        // $('.login-modal').css('display', 'none');
       });
 
     });

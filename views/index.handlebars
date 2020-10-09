@@ -19,7 +19,7 @@
 
         <div class="menu-options">
             <ul>
-                <li><button id="create-account-button" class="start">Create Account</button></li>
+                <li><button id="create-account-button">Create Account</button></li>
                 <li><button id="login-button">Login</button></li>
             </ul>
         </div>
@@ -32,7 +32,7 @@
         <!-- Modal content -->
         <div class="modal-content">
             <h3>Create Account</h3>
-            <form action="">
+            <form id="new-account-form">
                 <div class="email-div form-field">
                     <label for="email">Email:</label>
                     <input type="email" name="email" id="new-email">
@@ -64,7 +64,7 @@
         <!-- Modal content -->
         <div class="modal-content">
             <h3>Log-In</h3>
-            <form action="">
+            <form id="login-form">
                 <div class="username-div form-field">
                     <label for="username">Username:</label>
                     <input type="text" name="username" id="login-username">
