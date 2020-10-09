@@ -41,4 +41,34 @@ router.get("/gameboard", function (request, response) {
   });
 });
 
+router.get("/gametest", function (request, response) {
+  var images = [];
+  board.all(function (data) {
+    var hbsObject = {
+      board: data,
+    };
+    console.log(hbsObject);
+
+    var cardImages = [
+      "https://www.flaticon.com/svg/static/icons/svg/2281/2281113.svg",
+      "https://www.flaticon.com/svg/static/icons/svg/2281/2281113.svg",
+      "https://www.flaticon.com/svg/static/icons/svg/2281/2281113.svg",
+      "https://www.flaticon.com/svg/static/icons/svg/2281/2281113.svg",
+      "https://www.flaticon.com/svg/static/icons/svg/2281/2281113.svg",
+      "https://www.flaticon.com/svg/static/icons/svg/2281/2281113.svg",
+      "https://www.flaticon.com/svg/static/icons/svg/2281/2281113.svg",
+      "https://www.flaticon.com/svg/static/icons/svg/2281/2281113.svg",
+      "https://www.flaticon.com/svg/static/icons/svg/2281/2281113.svg",
+      "https://www.flaticon.com/svg/static/icons/svg/2281/2281113.svg",
+      "https://www.flaticon.com/svg/static/icons/svg/2281/2281113.svg",
+      "https://www.flaticon.com/svg/static/icons/svg/2281/2281113.svg",
+      "https://www.flaticon.com/svg/static/icons/svg/2281/2281113.svg",
+      "https://www.flaticon.com/svg/static/icons/svg/2281/2281113.svg",
+      "https://www.flaticon.com/svg/static/icons/svg/2281/2281113.svg",
+      "https://www.flaticon.com/svg/static/icons/svg/2281/2281113.svg",
+    ];
+    response.render("board", { cards: cardImages });
+  });
+});
+
 module.exports = router;
