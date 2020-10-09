@@ -1,22 +1,30 @@
 .grid-container {
   display: grid;
   grid-template-columns: auto auto auto auto;
-  background-color: gray;
+  background-color: lightslategray;
   padding: 10px;
+  width: 98%;
 }
 .grid-item {
-  background-color: rgba(255, 255, 255, 0.8);
-  /*border: 1px solid rgba(0, 0, 0, 0.8);*/
-  border-radius: 2px solid black;
-  padding: 20px;
-  font-size: 30px;
-  text-align: center;
-  width: 20%;
-  height: 180px;
-  background-color: whitesmoke;
+  padding: 1%;
+
+  width: 24%;
+  height: 190px;
+  background-color: moccasin;
 }
 
 .img {
   height: 140px;
   width: 140px;
+}
+
+h1 {
+  color: lightslategray;
+  font-family: arial, sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-left: 10px;
+  text-align: center;
 }

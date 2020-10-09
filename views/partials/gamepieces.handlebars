@@ -1,8 +1,11 @@
 <div>
-	<ul class="Cards_List">
+	<div class="Cards_List">
 		{{#each cards}}
-		<img class="grid-item" src="{{this}}" alt="card">
+		<button class="grid-item">
+			<img class="img" src="{{this}}" alt="card">
+		</button>
+
 		{{/each}}
-	</ul>
+	</div>
 
 </div>
