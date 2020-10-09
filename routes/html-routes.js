@@ -15,7 +15,6 @@ module.exports = function(app) {
   // index route loads view.html
   app.get("/", function(req, res) {
       res.render("index");
-    // res.sendFile(path.join(__dirname, "../views/index.handlebars"));
   });
 
   app.get("/gameboard", function(req, res) {
