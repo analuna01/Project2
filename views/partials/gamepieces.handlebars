@@ -1,8 +1,8 @@
 <div>
-	{{gameCard}}
-
-	{{#if flag}}
-	<img id="img1" src="" alt="card">
-	{{/if}}
+	<ul class="Cards_List">
+		{{#each cards}}
+		<img class="grid-item" src="{{this}}" alt="card">
+		{{/each}}
+	</ul>
 
 </div>
