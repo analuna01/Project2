@@ -94,8 +94,8 @@ $(function () {
     console.log(existingUser);
 
     // Post Request to send new user data
-    $.ajax("/api/user", {
-      type: "GET",
+    $.ajax("/api/user/login", {
+      type: "POST",
       data: existingUser,
     }).then(function (data) {
       console.log("User Logged in as: " + data);
