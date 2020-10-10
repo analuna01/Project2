@@ -6,15 +6,25 @@
     </div>
 
 
-    <div class="div-main">
+    <div id="div-main">
 
-        <div class="header-title">
-            <h1>Memory Game [Cats]</h1>
+        <div id="div-header">
+            <div class="header-title">
+                <h1>Memory Game</h1>
+            </div>
+
+            <div class="header-score">
+                <h2>Category: <span id="category">Animals</span> </h2>
+                <h2>Score: <span id="score">0</span> <span id="total">/8</span></h2>
+
+            </div>
+
         </div>
+
+
 
         <div class="grid-container">
             {{!-- {{{ board }}} --}}
-
             <div>
                 <div class="Cards_List">
                     {{#each cards}}
@@ -26,6 +36,7 @@
                 </div>
 
             </div>
+
 
             {{!--  --}}
         </div>

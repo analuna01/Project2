@@ -1,2 +1,6 @@
 node_modules
+<<<<<<< HEAD
+config.json
+=======
+>>>>>>> 70c2910c6ec8b708dbaf69addfe1f28c57c9154c
 .env
