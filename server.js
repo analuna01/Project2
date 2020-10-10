@@ -6,6 +6,7 @@
 // =============================================================
 var express = require("express");
 
+
 // Sets up the Express App
 // =============================================================
 var app = express();
@@ -37,3 +38,4 @@ db.sequelize.sync({ force: true }).then(function() {
     console.log("App listening on PORT " + PORT);
   });
 });
+
