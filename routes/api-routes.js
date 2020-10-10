@@ -18,10 +18,10 @@ module.exports = function (app) {
             })
             .then(function (results) {
                 db.board.bulkCreate([
-                    {img_loc: "assets/cats/1.png", img_part: "a"},
-                    {img_loc: "assets/cats/2.png", img_part: "b"},
-                    {img_loc: "assets/cats/1.png", img_part: "a"},
-                    {img_loc: "assets/cats/2.png", img_part: "b"}
+                    { img_loc: "assets/cats/1.png", img_part: "a" },
+                    { img_loc: "assets/cats/2.png", img_part: "b" },
+                    { img_loc: "assets/cats/1.png", img_part: "a" },
+                    { img_loc: "assets/cats/2.png", img_part: "b" }
                 ], { individualHooks: true, validate: true })
                     .then(function (results) {
                         res.json(results);
