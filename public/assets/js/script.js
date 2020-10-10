@@ -9,6 +9,12 @@ $(function () {
       event.preventDefault();
       $(".create-modal").css("display", "none");
       $(".login-modal").css("display", "none");
+      $('#new-account-form').each(function(){
+        this.reset();
+      });
+      $('#login-form').each(function(){
+        this.reset();
+      });
       console.log("Modal closed");
     });
   });
@@ -69,6 +75,7 @@ $(function () {
     console.log("Modal Open");
   });
 
+
   // Existing user creation
   $("#login-submit-button").click(function (event) {
     event.preventDefault();
@@ -87,6 +94,7 @@ $(function () {
     }
 
     var existingUser = {
+      email: "",
       username: username,
       password: password,
     };
@@ -94,14 +102,17 @@ $(function () {
     console.log(existingUser);
 
     // Post Request to send new user data
-    $.ajax("/api/user", {
-      type: "GET",
+    $.ajax("/api/user/login", {
+      type: "POST",
       data: existingUser,
-    }).then(function (data) {
-      console.log("User Logged in as: " + data);
+    }).then(function (result) {
+
+      console.log("User Logged in as: \n" + JSON.stringify(result));
+
       $('#login-form').each(function(){
         this.reset();
       });
+
     });
   });
 });
