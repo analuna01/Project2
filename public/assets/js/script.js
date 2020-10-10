@@ -52,7 +52,7 @@ $(function() {
       console.log(newUser);
 
       // Post Request to send new user data
-      $.ajax("/api/users", {
+      $.ajax("/api/user", {
         type: "POST",
         data: newUser
       })
@@ -95,7 +95,7 @@ $(function() {
       console.log(existingUser);
 
       // Post Request to send new user data
-      $.ajax("/api/users", {
+      $.ajax("/api/user", {
         type: "GET",
         data: existingUser
       })
