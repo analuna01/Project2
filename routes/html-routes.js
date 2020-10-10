@@ -36,6 +36,8 @@ module.exports = function (app) {
       "https://www.flaticon.com/svg/static/icons/svg/2281/2281113.svg",
     ];
 
-    res.render("board", { cards: cardImages });
+    res.render("board", {
+      cards: cardImages
+    });
   });
 };

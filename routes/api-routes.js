@@ -6,7 +6,7 @@ module.exports = function (app) {
             res.json(results);
         });
     });
-    //empties current board
+    //empties and refills current board
     app.put("/api/reset", function (req, res) {
         db.board
             .destroy({
@@ -14,7 +14,16 @@ module.exports = function (app) {
                 cascade: false,
             })
             .then(function (results) {
-                res.json(results);
+                db.board.bulkCreate([
+                    { img_loc: "assets/cats/1.png", img_part: "a" },
+                    { img_loc: "assets/cats/2.png", img_part: "b" },
+                    { img_loc: "assets/cats/1.png", img_part: "a" },
+                    { img_loc: "assets/cats/2.png", img_part: "b" }
+                ], { individualHooks: true, validate: true })
+                    .then(function (results) {
+                        res.json(results);
+
+                    })
             });
     });
     // create a user
@@ -29,8 +38,14 @@ module.exports = function (app) {
                 res.json(results);
             });
     });
-    // get all users
-    app.get("/api/user", (req, res) => {
-        db.user.findAll().then((users) => res.json(users));
-    });
+    //returns user with matching username and password
+    app.get('/api/user', (req, res) => {
+        console.log(req.body);
+        db.user.findAll({
+            where: {
+                username: req.body.username,
+                password: req.body.password
+            }
+        }).then(users => res.json(users))
+    })
 };
