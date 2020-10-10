@@ -12,8 +12,13 @@ module.exports = function (app) {
   // Each of the below routes just handles the HTML page that the user gets sent to.
 
   // index route loads view.html
+<<<<<<< HEAD
+  app.get("/", function(req, res) {
+      res.render("index");
+=======
   app.get("/", function (req, res) {
     res.render("index");
+>>>>>>> 0a43eb24b9e6ddfbd7510cc94473438dbcf0df44
   });
 
   app.get("/gameboard", function (req, res) {
