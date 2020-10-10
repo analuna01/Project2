@@ -66,6 +66,7 @@ $(function () {
         this.reset();
       });
       $(".create-modal").css("display", "none");
+      goToGame();
     });
   });
 
@@ -108,11 +109,24 @@ $(function () {
     }).then(function (result) {
 
       console.log("User Logged in as: \n" + JSON.stringify(result));
-
+      $(".login-modal").css("display", "none");
       $('#login-form').each(function(){
         this.reset();
       });
+      goToGame();
 
     });
   });
+
+  function goToGame() {
+    $.ajax("/gameboard", {
+      type: "GET",
+    }).then(function(results) {
+      window.location.href = "/gameboard";
+      return results;
+    });
+  }
+
+
+
 });
