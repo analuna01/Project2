@@ -66,7 +66,7 @@ $(function () {
         this.reset();
       });
       $(".create-modal").css("display", "none");
-      goToGame();
+      // goToGame();
     });
   });
 
@@ -113,7 +113,14 @@ $(function () {
       $('#login-form').each(function(){
         this.reset();
       });
-      goToGame();
+      try {
+        if (result[0].username === username && result[0].password === password) {
+          goToGame();
+        }
+      } catch (error) {
+        console.log(error);
+        alert('No Account with given username and/or password');
+      }
 
     });
   });

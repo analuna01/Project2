@@ -44,6 +44,8 @@ module.exports = function (app) {
                 res.json(results);
             });
     });
+
+    // User Login
     //returns user with matching username and password
     app.post('/api/user/login', (req, res) => {
         // console.log(req.body);
@@ -52,7 +54,10 @@ module.exports = function (app) {
                 username: req.body.username,
                 password: req.body.password
             }
-        }).then(users => res.json(users))
+        }).then(users => {
+            res.json(users);
+            console.log('User Login Response: ' + users);
+        });
     })
     //
     //LEADERBOARD CALLS
