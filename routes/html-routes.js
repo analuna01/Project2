@@ -17,27 +17,28 @@ module.exports = function (app) {
   });
 
   app.get("/gameboard", function (req, res) {
-    var cardImages = [
-      "assets/cats/1.png",
-      "assets/cats/1.png",
-      "assets/cats/1.png",
-      "assets/cats/1.png",
-      "assets/cats/1.png",
-      "assets/cats/1.png",
-      "assets/cats/1.png",
-      "assets/cats/1.png",
-      "assets/cats/1.png",
-      "assets/cats/1.png",
-      "assets/cats/1.png",
-      "assets/cats/1.png",
-      "assets/cats/1.png",
-      "assets/cats/1.png",
-      "assets/cats/1.png",
-      "assets/cats/1.png",
+    var defaultImage = "assets/media/back.png";
+    var defaultArray = [
+      defaultImage,
+      defaultImage,
+      defaultImage,
+      defaultImage,
+      defaultImage,
+      defaultImage,
+      defaultImage,
+      defaultImage,
+      defaultImage,
+      defaultImage,
+      defaultImage,
+      defaultImage,
+      defaultImage,
+      defaultImage,
+      defaultImage,
+      defaultImage,
     ];
 
     res.render("board", {
-      cards: cardImages,
+      cards: defaultArray,
     });
   });
 };
