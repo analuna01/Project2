@@ -1,13 +1,8 @@
 node_modules
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
+
 
 config.json
 
-=======
-<<<<<<< HEAD
->>>>>>> 0c89966af5d5367e5b16c9d0bd642fb55e6f714d
-config.json
-.env
->>>>>>> 19266494cee356883fcd95cfc1243351ca71a382
+.DS_Store/
+
+
