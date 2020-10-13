@@ -77,7 +77,7 @@ $(function () {
   });
 
 
-  // Existing user creation
+  // Existing user login
   $("#login-submit-button").click(function (event) {
     event.preventDefault();
 
@@ -133,7 +133,11 @@ $(function () {
       return results;
     });
   }
-
-
+  
+  // Play without account
+  $("#play-button").click(function (event) {
+    event.preventDefault();
+    goToGame();
+  });
 
 });
