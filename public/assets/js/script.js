@@ -66,6 +66,7 @@ $(function () {
         this.reset();
       });
       $(".create-modal").css("display", "none");
+      // goToGame();
     });
   });
 
@@ -108,11 +109,31 @@ $(function () {
     }).then(function (result) {
 
       console.log("User Logged in as: \n" + JSON.stringify(result));
-
+      $(".login-modal").css("display", "none");
       $('#login-form').each(function(){
         this.reset();
       });
+      try {
+        if (result[0].username === username && result[0].password === password) {
+          goToGame();
+        }
+      } catch (error) {
+        console.log(error);
+        alert('No Account with given username and/or password');
+      }
 
     });
   });
+
+  function goToGame() {
+    $.ajax("/gameboard", {
+      type: "GET",
+    }).then(function(results) {
+      window.location.href = "/gameboard";
+      return results;
+    });
+  }
+
+
+
 });
