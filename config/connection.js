@@ -1,10 +1,15 @@
 var Sequelize = require("sequelize");
+require("dotenv").config();
+
+process.envrequire("dotenv").config();
+
 var SQLPORT = require(process.env.SQLPORT);
+require("dotenv").config();
 
 // Creates mySQL connection using Sequelize, the empty string in the third argument spot is our password.
 var sequelize = new Sequelize("memory_db", "root", "root", {
   host: "localhost",
-  port: process.env.SQLPORT,
+  port: "3317",
   dialect: "mysql",
   pool: {
     max: 5,
