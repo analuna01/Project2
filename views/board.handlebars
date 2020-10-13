@@ -1,6 +1,6 @@
 <section>
     <link rel="stylesheet" href="/assets/css/board.css" type="text/css" />
-    <script src="/assets/js/board.js"></script>
+
     <div class="gameboard-container">
         <div></div>
     </div>
@@ -14,7 +14,7 @@
             </div>
 
             <div class="header-score">
-                <h2>Category: <span id="category">Animals</span> </h2>
+                <h2>Category: <span id="category">Flags</span> </h2>
                 <h2>Score: <span id="score">0</span> <span id="total">/8</span></h2>
 
             </div>
@@ -25,21 +25,22 @@
 
         <div class="grid-container">
             {{!-- {{{ board }}} --}}
-            <div>
-                <div class="Cards_List">
-                    {{#each cards}}
-                    <button class="grid-item">
-                        <img class="img" src="{{this}}" alt="card">
-                    </button>
 
-                    {{/each}}
-                </div>
+            <div id="Cards_List">
+                {{#each cards}}
+                <button class="grid-item">
+                    <img class="img" src="{{this}}" alt=" card" id={{@index}}>
+                </button>
 
+                {{/each}}
             </div>
+
+
 
 
             {{!--  --}}
         </div>
 
     </div>
+    <script src="/assets/js/board.js"></script>
 </section>
