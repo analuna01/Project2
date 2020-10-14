@@ -67,7 +67,7 @@ $(function () {
         this.reset();
       });
       $(".create-modal").css("display", "none");
-      // goToGame();
+      goToGame();
     });
   });
 
@@ -136,10 +136,10 @@ $(function () {
   }
   
   function goToLeaderboard() {
-    $.ajax("/leaderboard", {
+    $.ajax("/api/leaderboard", {
       type: "GET",
     }).then(function(results) {
-      window.location.href = "/leaderboard";
+      window.location.href = "/api/leaderboard";
       return results;
     });
   }
