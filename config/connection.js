@@ -12,7 +12,7 @@ if (process.env.JAWSDB_URL){
 } else {
   connection = mysql.createConnection({
     host: "localhost",
-    port: "3000",
+    port: "3318",
     user: "root",
     password: "root",
     database: "memory_db",
@@ -25,6 +25,8 @@ if (process.env.JAWSDB_URL){
   //     max: 5,
   //     min: 0,
   //     idle: 10000,
+  
+  connection.connect();
 
 };
 

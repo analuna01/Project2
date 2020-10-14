@@ -1,8 +1,8 @@
 var db = require("../models");
 module.exports = function (app) {
-    //
+    //======================================================================
     //BOARD CALLS
-    //
+    //======================================================================
     //returns the board table
     app.get("/api/board", function (req, res) {
         db.board.findAll({}).then(function (results) {
@@ -29,9 +29,9 @@ module.exports = function (app) {
                     })
             });
     });
-    //
+    //======================================================================
     //USER CALLS
-    //
+    //======================================================================
     // create a user
     app.post("/api/user", (req, res) => {
         db.user
@@ -59,9 +59,9 @@ module.exports = function (app) {
             console.log('User Login Response: ' + users);
         });
     })
-    //
+    //======================================================================
     //LEADERBOARD CALLS
-    //
+    //======================================================================
     app.get('/api/leaderboard', (req,res) => {
         db.leaderboard.findAll({}).then(function (results) {
             res.json(results);
@@ -70,7 +70,7 @@ module.exports = function (app) {
     app.post("/api/leaderboard", (req, res) => {
         db.leaderboard
             .create({
-                score: req.body.score,
+                time: req.body.time,
                 user_id: req.body.user_id
             })
             .then(function (results) {
