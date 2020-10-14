@@ -110,22 +110,6 @@ function clearTasks(){
 
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 $(function () {
   $(".grid-item").on("click", function (event) {
     event.preventDefault();
