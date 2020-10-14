@@ -5,6 +5,7 @@
 // *** Dependencies
 // =============================================================
 var express = require("express");
+var helmet = require("helmet");
 
 
 // Sets up the Express App
@@ -15,6 +16,7 @@ var PORT = process.env.PORT || 3000;
 // Requiring our models for syncing
 var db = require("./models");
 var exphbs = require("express-handlebars");
+app.use(helmet());
 
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));

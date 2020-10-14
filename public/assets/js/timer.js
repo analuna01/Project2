@@ -3,14 +3,10 @@ var time = 0;
 var running = 0;
 
 function start() {
-  if (running == 0) {
+ 
     running = 1;
     increment();
-    document.getElementById("startBtn").innerHTML = "Pause";
-  } else {
-    running = 0;
-    document.getElementById("startBtn").innerHTML = "Resume";
-  }
+   
 }
 
 function reset() {
@@ -32,3 +28,6 @@ function increment() {
     }, 100)
   }
 };
+
+
+start();
