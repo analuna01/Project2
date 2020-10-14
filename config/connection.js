@@ -14,7 +14,7 @@ if (process.env.JAWSDB_URL){
     host: "localhost",
     port: "3000",
     user: "root",
-    password: "marley28",
+    password: "root",
     database: "memory_db",
   })
   // var sequelize = new Sequelize("memory_db", "root", "root", {

@@ -43,44 +43,119 @@ function checkGame() {
     winArray[pick1] = 1;
     winArray[pick2] = 1;
     console.log(winArray);
+    checkifWin();
+
   } else {
     flipDown(pick1);
     flipDown(pick2);
   }
 }
 
+function checkifWin(){
+  var counter=0;
+  winArray.forEach(element => {
+    
+    counter+= parseInt(element);
+
+    
+  });
+  console.log(counter);
+  
+if(counter==16){
+  console.log("you Won");
+
+ 
+ var userName = document.getElementById("userName").textContent;
+
+ setStoraged(userName);
+
+}
+ 
+
+}
+
+
+
+/*
+function loadStoraged(){
+
+  if(JSON.parse(localStorage.getItem("users"))){
+      var storedTasks = JSON.parse(localStorage.getItem("users"));
+       
+  }
+      
+  else
+      console.log("not storaged");
+
+  
+}
+*/
+
+// set the local storage the value 
+function setStoraged(usertosave){
+  
+
+  if(JSON.parse(localStorage.getItem("users")))
+      var users = JSON.parse(localStorage.getItem("users"));
+  else
+      var users = [];
+
+
+  users.push(usertosave);
+  localStorage.setItem("users", JSON.stringify(users));
+
+}
+
+
+//clear the local storage
+function clearTasks(){
+
+  var tasks = JSON.parse(localStorage.getItem("users"));
+  tasks= [];
+
+  localStorage.setItem("users", JSON.stringify(tasks));
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 $(function () {
   $(".grid-item").on("click", function (event) {
     event.preventDefault();
+   
     
     flipUp(event.target.id);
     game++;
     
-<<<<<<< HEAD
 
-=======
->>>>>>> 8d742a25b5996b2ed169a20913ad9c4783ac3c60
     if (game == 1) {
       pick1 = event.target.id;
-      console.log("pick1", pick1);
+      
     }
     
     if (game == 2) {
       pick2 = event.target.id;
-      console.log("pick2", pick2);
-<<<<<<< HEAD
-      
-
+     
       setTimeout(function(){ 
-       checkGame();
-
-=======
-      checkGame();
-      
->>>>>>> 8d742a25b5996b2ed169a20913ad9c4783ac3c60
-      pick1 = 0;
-      pick2 = 0;
-      game = 0;
+        checkGame();
+        
+        pick1 = 0;
+        pick2 = 0;
+        game = 0;
       
         ; }, 1000);
      
