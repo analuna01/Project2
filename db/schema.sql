@@ -16,7 +16,7 @@ CREATE TABLE board(
 
 CREATE TABLE leaderboard(
   id INTEGER(11) AUTO_INCREMENT NOT NULL,
-  score INT,
+  time INT,
   userid INTEGER(11),
   PRIMARY KEY (id)
 );

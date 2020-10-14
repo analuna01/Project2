@@ -64,9 +64,14 @@ module.exports = function (app) {
     //
     app.get('/api/leaderboard', (req,res) => {
         db.leaderboard.findAll({}).then(function (results) {
-            res.json(results);
+            var handlebarObject = {
+                users: results
+            };
+
+            res.render("leaderboard", handlebarObject);
         });
     });
+
     app.post("/api/leaderboard", (req, res) => {
         db.leaderboard
             .create({
