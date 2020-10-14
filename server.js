@@ -16,7 +16,16 @@ var PORT = process.env.PORT || 3000;
 // Requiring our models for syncing
 var db = require("./models");
 var exphbs = require("express-handlebars");
-app.use(helmet());
+
+// app.use(helmet({
+//   contentSecurityPolicy: false
+// }));
+app.use(helmet.contentSecurityPolicy({
+  directives: {
+    scriptSrc: ["'self'", "code.jquery.com"],
+    defaultSrc: ["'self'"]
+  }
+}));
 
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
