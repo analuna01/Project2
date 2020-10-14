@@ -139,6 +139,8 @@ $(function () {
       type: "GET",
     }).then(function(results) {
       window.location.href = "/api/leaderboard";
+      console.log('Results Below:');
+      console.log(results);
       return results;
     });
   }

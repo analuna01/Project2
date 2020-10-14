@@ -13,8 +13,8 @@
             <th>Username</th>
             <th>Time</th>
         </tr>
-        {{#each user}}
-          {{> user/user}}
+        {{#each users}}
+          {{> user-partial username=username time=time}}
         {{/each}}
     </table>
 </div>

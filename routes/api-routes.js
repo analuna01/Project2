@@ -1,3 +1,4 @@
+const { data } = require("jquery");
 var db = require("../models");
 module.exports = function (app) {
     //======================================================================
@@ -62,21 +63,28 @@ module.exports = function (app) {
     //======================================================================
     //LEADERBOARD CALLS
     //======================================================================
-    app.get('/api/leaderboard', (req,res) => {
-        db.leaderboard.findAll({}).then(function (results) {
-            var handlebarObject = {
-                users: results
-            };
+    // app.get('/api/leaderboard', (req,res) => {
+    //     db.leaderboard.findAll({}).then(function (data) {
+    //         var handlebarObject = {
+    //             users: data
+    //         };
+    //         // console.log(data);
+    //         console.log(handlebarObject);
 
-            res.render("leaderboard", handlebarObject);
-        });
+    //         res.render("leaderboard", data.leaderboard);
+    //     });
+    // });
+
+    app.get('/api/leaderboard', (req,res) => {
+        db.leaderboard.findAll({}).then(data => res.render("leaderboard", {users: data}));
+        // console.log(users);
     });
 
     app.post("/api/leaderboard", (req, res) => {
         db.leaderboard
             .create({
                 time: req.body.time,
-                user_id: req.body.user_id
+                username: req.body.username
             })
             .then(function (results) {
                 res.json(results);
