@@ -15,7 +15,12 @@
 
             <div class="header-score">
                 <h2>Category: <span id="category">Flags</span> </h2>
-                <h2>Score: <span id="score">0</span> <span id="total">/8</span></h2>
+                <h2>Timer:<span id="time"></span></h2>
+                <div id="controls">
+                    <button id="startBtn" onclick="start()">Start</button>
+                    <button onclick="reset()">Reset</button>
+                </div>
+                {{!-- </span> <span id="total">/8</span> --}}
 
             </div>
 
@@ -43,4 +48,5 @@
 
     </div>
     <script src="/assets/js/board.js"></script>
+    <script src="/assets/js/timer.js"></script>
 </section>
