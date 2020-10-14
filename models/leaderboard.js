@@ -1,6 +1,6 @@
 module.exports = function(sequelize, DataTypes) {
     var leaderboard = sequelize.define("leaderboard", {
-      score: {
+      time: {
         type: DataTypes.INTEGER,
         allowNull: false
       },

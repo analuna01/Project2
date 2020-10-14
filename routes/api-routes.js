@@ -70,7 +70,7 @@ module.exports = function (app) {
     app.post("/api/leaderboard", (req, res) => {
         db.leaderboard
             .create({
-                score: req.body.score,
+                time: req.body.time,
                 user_id: req.body.user_id
             })
             .then(function (results) {

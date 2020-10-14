@@ -4,19 +4,19 @@
     "password": "root",
     "database": "memory_db",
     "host": "127.0.0.1",
-    "port": "3317",
+    "port": "3318",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": "marley28",
+    "password": "root",
     "database": "database_test",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "production": {
     "username": "root",
-    "password": "marley28",
+    "password": "root",
     "database": "database_production",
     "host": "127.0.0.1",
     "dialect": "mysql"
