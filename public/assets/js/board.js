@@ -1,4 +1,4 @@
-var dir = "flags";
+var dir = "sports";
 var winCounter = 0;
 
 const winArray = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
@@ -55,6 +55,7 @@ $(function () {
 
     flipUp(event.target.id);
     game++;
+    
 
     if (game == 1) {
       pick1 = event.target.id;
@@ -64,11 +65,17 @@ $(function () {
     if (game == 2) {
       pick2 = event.target.id;
       console.log("pick2", pick2);
-      checkGame();
+      
+
+      setTimeout(function(){ 
+       checkGame();
 
       pick1 = 0;
       pick2 = 0;
       game = 0;
+      
+        ; }, 1000);
+     
     }
   });
 });
