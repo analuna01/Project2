@@ -63,17 +63,6 @@ module.exports = function (app) {
     //======================================================================
     //LEADERBOARD CALLS
     //======================================================================
-    // app.get('/api/leaderboard', (req,res) => {
-    //     db.leaderboard.findAll({}).then(function (data) {
-    //         var handlebarObject = {
-    //             users: data
-    //         };
-    //         // console.log(data);
-    //         console.log(handlebarObject);
-
-    //         res.render("leaderboard", data.leaderboard);
-    //     });
-    // });
 
     app.get('/api/leaderboard', (req,res) => {
         db.leaderboard.findAll({}).then(data => res.render("leaderboard", {users: data}));
