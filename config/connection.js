@@ -12,9 +12,9 @@ if (process.env.JAWSDB_URL){
 } else {
   connection = mysql.createConnection({
     host: "localhost",
-    port: "3000",
+    port: "3306",
     user: "root",
-    password: "marley28",
+    password: "root",
     database: "memory_db",
   })
   // var sequelize = new Sequelize("memory_db", "root", "root", {

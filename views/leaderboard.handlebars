@@ -2,6 +2,8 @@
     <div>
         <h1>Leaderboard</h1>
         <p>Fastest memory players we've seen!</p>
+        <button id="home-button">Home</button>
+        <button id="play-button">Play Game</button>
     </div>
 </header>
 
@@ -11,19 +13,8 @@
             <th>Username</th>
             <th>Time</th>
         </tr>
-        {{!-- {{#each user}} --}}
-        <tr class="data-tr">
-            <td class="">Superman</td>
-            <td>00:30:01</td>
-        </tr>
-        <tr class="data-tr">
-            <td class="">Batman</td>
-            <td>01:20:17</td>
-        </tr>
-        <tr class="data-tr">
-            <td class="">Frodo</td>
-            <td>36:42:59</td>
-        </tr>
-        {{!-- {{/each}} --}}
+        {{#each user}}
+          {{> user/user}}
+        {{/each}}
     </table>
 </div>

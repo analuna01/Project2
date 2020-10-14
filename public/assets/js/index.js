@@ -1,3 +1,4 @@
+
 $(function () {
   // Display account create modal on click
   $("#create-account-button").on("click", function (event) {
@@ -60,13 +61,13 @@ $(function () {
     $.ajax("/api/user", {
       type: "POST",
       data: newUser,
-    }).then(function () {
+    }).then(function (result) {
       console.log("New User Sent");
       $('#new-account-form').each(function(){
         this.reset();
       });
       $(".create-modal").css("display", "none");
-      // goToGame();
+      goToGame();
     });
   });
 
@@ -134,10 +135,25 @@ $(function () {
     });
   }
   
+  function goToLeaderboard() {
+    $.ajax("/api/leaderboard", {
+      type: "GET",
+    }).then(function(results) {
+      window.location.href = "/api/leaderboard";
+      return results;
+    });
+  }
+  
   // Play without account
   $("#play-button").click(function (event) {
     event.preventDefault();
     goToGame();
+  });
+  
+  // Go to Leaderboard
+  $("#leaderboard-button").click(function (event) {
+    event.preventDefault();
+    goToLeaderboard();
   });
 
 });

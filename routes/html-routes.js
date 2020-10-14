@@ -16,9 +16,9 @@ module.exports = function (app) {
     res.render("index");
   });
   
-  app.get("/leaderboard", function (req, res) {
-    res.render("leaderboard");
-  });
+  // app.get("/leaderboard", function (req, res) {
+  //   res.render("leaderboard");
+  // });
 
   app.get("/gameboard", function (req, res) {
     var defaultImage = "assets/media/back.png";

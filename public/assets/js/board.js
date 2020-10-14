@@ -43,15 +43,77 @@ function checkGame() {
     flipDown(pick2);
   }
 }
+
 function checkifWin(){
-  randomArray.forEach(element => {
+  var counter=0;
+  winArray.forEach(element => {
     
+    counter+= parseInt(element);
+
     
   });
+  console.log(counter);
+  
+if(counter==16){
+  console.log("you Won");
+
+ 
+ var userName = document.getElementById("userName").textContent;
+
+ setStoraged(userName);
+
 }
+ 
+
+}
+
+
+
+/*
+function loadStoraged(){
+
+  if(JSON.parse(localStorage.getItem("users"))){
+      var storedTasks = JSON.parse(localStorage.getItem("users"));
+       
+  }
+      
+  else
+      console.log("not storaged");
+
+  
+}
+*/
+
+// set the local storage the value 
+function setStoraged(usertosave){
+  
+
+  if(JSON.parse(localStorage.getItem("users")))
+      var users = JSON.parse(localStorage.getItem("users"));
+  else
+      var users = [];
+
+
+  users.push(usertosave);
+  localStorage.setItem("users", JSON.stringify(users));
+
+}
+
+
+//clear the local storage
+function clearTasks(){
+
+  var tasks = JSON.parse(localStorage.getItem("users"));
+  tasks= [];
+
+  localStorage.setItem("users", JSON.stringify(tasks));
+
+}
+
 $(function () {
   $(".grid-item").on("click", function (event) {
     event.preventDefault();
+   
     
     flipUp(event.target.id);
     game++;
@@ -65,9 +127,8 @@ $(function () {
       pick2 = event.target.id;
      
       setTimeout(function(){ 
-       checkGame();
-      checkGame();
-      
+        checkGame();
+              
       pick1 = 0;
       pick2 = 0;
       game = 0;
