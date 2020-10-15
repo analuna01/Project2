@@ -16,10 +16,10 @@ var PORT = process.env.PORT || 3000;
 // Requiring our models for syncing
 var db = require("./models");
 var exphbs = require("express-handlebars");
+const Handlebars = require('handlebars');
+const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access')
 
-// app.use(helmet({
-//   contentSecurityPolicy: false
-// }));
+
 app.use(helmet.contentSecurityPolicy({
   directives: {
     scriptSrc: ["'self'", "code.jquery.com"],
@@ -31,7 +31,10 @@ app.use(helmet.contentSecurityPolicy({
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.engine('handlebars', exphbs({ defaultLayout: 'main'}));
+app.engine('handlebars', exphbs({
+  defaultLayout: 'main',
+  handlebars: allowInsecurePrototypeAccess(Handlebars)
+}));
 app.set("view engine", "handlebars");
 
 // Static directory
