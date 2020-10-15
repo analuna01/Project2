@@ -1,31 +1,26 @@
-<header>
-    <div>
-        <h1>Leaderboard</h1>
-        <p>Fastest memory players we've seen!</p>
-        <button id="home-button">Home</button>
-        <button id="play-button">Play Game</button>
-    </div>
-</header>
+<section>
+    <header>
+        <link rel="stylesheet" href="/assets/css/leaderboard.css" type="text/css" />
+            <img src="/assets/img/icon.png" alt="logo" />
+            <h1>Leaderboard</h1>
+    </header>
+        <div class="controls">
+            <button id="home-button">Home</button>
+            <button id="play-button">Play Game</button>
+        </div>
 
-<div>
-    <table>
-        <tr>
-            <th>Username</th>
-            <th>Time</th>
-        </tr>
-        {{!-- {{#each user}} --}}
-        <tr class="data-tr">
-            <td class="">Superman</td>
-            <td>00:30:01</td>
-        </tr>
-        <tr class="data-tr">
-            <td class="">Batman</td>
-            <td>01:20:17</td>
-        </tr>
-        <tr class="data-tr">
-            <td class="">Frodo</td>
-            <td>36:42:59</td>
-        </tr>
-        {{!-- {{/each}} --}}
-    </table>
-</div>
+    <div>
+        <div>
+            <h3>Fastest memory players we've seen!</h3>
+        </div>
+        <table>
+            <tr>
+                <th>Username</th>
+                <th>Time</th>
+            </tr>
+            {{#each users}}
+            {{> user-partial username=username time=time}}
+            {{/each}}
+        </table>
+    </div>
+</section>

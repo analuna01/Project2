@@ -1,4 +1,4 @@
-<section>
+<section class="bg">
     <link rel="stylesheet" href="/assets/css/board.css" type="text/css" />
 
     <div class="gameboard-container">
@@ -11,15 +11,23 @@
         <div id="div-header">
             <div class="header-title">
                 <h1>Memory Game</h1>
-                <h2 id="h2user">User: <span id="userName">Aldo</span></h2>
+                <h2 id="h2user">User: <span id="userName">Not User Logged In</span></h2>
             </div>
 
             <div class="header-score">
-                <h2>Category: <span id="category">Flags</span> </h2>
+                <h2><label for="category">Category:</label>
+                    <select name="category" id="category">
+                        <option value="flags">Countries</option>
+                        <option value="food">Food</option>
+                        <option value="cats">Animals</option>
+                        <option value="landmarks">Places</option>
+                        <option value="sports">Sports</option>
+                    </select>
+
+                </h2>
                 <h2>Timer:<span id="time"></span></h2>
                 <div id="controls">
-                    <button id="startBtn" onclick="start()">Start</button>
-                    <button onclick="reset()">Reset</button>
+
                 </div>
                 {{!-- </span> <span id="total">/8</span> --}}
 

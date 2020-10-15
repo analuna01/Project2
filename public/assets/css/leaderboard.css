@@ -1,8 +1,41 @@
+body {
+  background-color: rgb(200, 212, 226);
+  min-height: 100%;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: scroll;
+}
+
+header {
+  background-color: rgb(101, 152, 185);
+  height: 100px;
+  padding: 10px;
+  font-size: 15px;
+  text-align: left;
+  font-family: 'Exo 2';font-size: 22px;
+  color: whitesmoke;
+}
+
+header img {
+  float: left;
+  width: 100px;
+  height: 100px;
+}
+
 section {
+  background-color: whitesmoke;
+  height: 100%;
+  opacity: 90% ;
+  margin: 50px;
     text-align: center;
 }
 
 table {
+  padding-top: 50px;
     font-family: arial, sans-serif;
     border-collapse: collapse;
     margin: auto;

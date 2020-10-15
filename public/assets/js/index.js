@@ -1,3 +1,4 @@
+
 $(function () {
   // Display account create modal on click
   $("#create-account-button").on("click", function (event) {
@@ -66,7 +67,7 @@ $(function () {
         this.reset();
       });
       $(".create-modal").css("display", "none");
-      // goToGame();
+      goToGame();
     });
   });
 
@@ -135,10 +136,12 @@ $(function () {
   }
   
   function goToLeaderboard() {
-    $.ajax("/leaderboard", {
+    $.ajax("/api/leaderboard", {
       type: "GET",
     }).then(function(results) {
-      window.location.href = "/leaderboard";
+      window.location.href = "/api/leaderboard";
+      console.log('Results Below:');
+      console.log(results);
       return results;
     });
   }

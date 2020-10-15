@@ -1,11 +1,16 @@
-var dir = "sports";
+var dir = "flags";
 var winCounter = 0;
-const winArray = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-const randomArray = randomImages();
+var winArray = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+var randomArray = randomImages();
 var game = 0;
 var pick1 = 0;
 var pick2 = 0;
-console.log(randomArray);
+
+setStoraged("Carrillo","0.0");
+loadStoraged();
+
+
+
 function randomImages() {
   const array = [1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8];
   
@@ -14,6 +19,7 @@ function randomImages() {
 }
 function flipUp(location) {
   var cardsList = document.getElementById("Cards_List").children;
+  
   var board = [];
   
   for (let index = 0; index < cardsList.length; index++) {
@@ -21,6 +27,11 @@ function flipUp(location) {
   }
   
   board[location].src = `assets/media/${dir}/${randomArray[location]}.png`;
+ var button = cardsList[location];
+ 
+ button.setAttribute("class","buttonBorder");
+ 
+
 }
 function flipDown(location) {
   var cardsList = document.getElementById("Cards_List").children;
@@ -31,28 +42,109 @@ function flipDown(location) {
   }
   
   board[location].src = `assets/media/back.png`;
+  var button = cardsList[location];
+ 
+ button.setAttribute("class","grid-item");
 }
 function checkGame() {
   if (randomArray[pick1] == randomArray[pick2]) {
     winArray[pick1] = 1;
     winArray[pick2] = 1;
-    console.log(winArray);
+   
+    var cardsList = document.getElementById("Cards_List").children;
+    cardsList[pick1].disabled =true;
+    cardsList[pick2].disabled =true;
+    
+    
+
     checkifWin();
   } else {
     flipDown(pick1);
     flipDown(pick2);
   }
 }
+
 function checkifWin(){
-  randomArray.forEach(element => {
+  var counter=0;
+  winArray.forEach(element => {
     
+    counter+= parseInt(element);
+
     
   });
+    
+  if(counter==16){
+    console.log("You Won!!");
+
+    var userName = document.getElementById("userName").textContent;
+    var userTime = document.getElementById("time").textContent;
+    document.getElementById("time").hidden = true;
+    setStoraged(userName,userTime);
+  }
+ 
 }
+
+
+
+$("#category").change(function(){
+  
+ dir = document.getElementById("category").value;
+
+ randomArray = randomImages();
+ document.getElementById("category").disabled=true;
+ timeReset();
+
+});
+
+
+
+//Storage Functions
+function loadStoraged(){
+
+  if(JSON.parse(localStorage.getItem("users"))){
+      var storedUsers = JSON.parse(localStorage.getItem("users"));
+      var userName = document.getElementById("userName");
+      userName.textContent= storedUsers[0].name;
+  }
+  else
+      console.log("not storaged");
+}
+
+function setStoraged(usertosave,timetosave){
+  
+  if(JSON.parse(localStorage.getItem("users")))
+      var users = JSON.parse(localStorage.getItem("users"));
+  else
+      var users = [];
+
+      var user={
+        name: usertosave,
+        time: timetosave
+      };
+
+  users[0]=user;
+  localStorage.setItem("users", JSON.stringify(users));
+
+}
+
+function clearStorage(){
+
+  var tasks = JSON.parse(localStorage.getItem("users"));
+  tasks= [];
+  localStorage.setItem("users", JSON.stringify(tasks));
+
+}
+//Storage Functions
+
+
+
+
+
+
 $(function () {
   $(".grid-item").on("click", function (event) {
     event.preventDefault();
-    
+   
     flipUp(event.target.id);
     game++;
     
@@ -65,9 +157,8 @@ $(function () {
       pick2 = event.target.id;
      
       setTimeout(function(){ 
-       checkGame();
-      checkGame();
-      
+        checkGame();
+              
       pick1 = 0;
       pick2 = 0;
       game = 0;
@@ -77,3 +168,37 @@ $(function () {
     }
   });
 });
+
+// Timer
+var time = 0;
+var running = 0;
+
+function timeStart() {
+ 
+    running = 1;
+    timeIncrement();
+   
+}
+
+function timeReset() {
+  running = 0;
+  time = 0;
+  document.getElementById("startBtn").innerHTML = "Start";
+}
+
+function timeIncrement() {
+  if (running == 1) {
+    setTimeout(function () {
+      time++;
+     // var mins = Math.floor(time / 60);
+      var secs = Math.floor(time / 10);
+      var milliSecs = time % 10;
+      document.getElementById("time").innerHTML =  + secs + "." + milliSecs;
+      timeIncrement();
+
+    }, 100)
+  }
+};
+
+
+timeStart();
