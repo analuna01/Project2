@@ -1,89 +1,129 @@
 body {
-  background-color: ghostwhite;
+    height: 100%;
+}
+
+.bg {
+    /* The image used */
+    background-image: url("..//media/background.png");
+
+    /* Full height */
+    height: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 #div-main {
-  padding: 20px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+    padding: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 #div-header {
-  display: flex;
-  padding-left: 25px;
-  margin-bottom: 20px;
-  margin-top: 20px;
+    display: flex;
+    padding-left: 25px;
+    margin-bottom: 20px;
+    margin-top: 20px;
 
-  border-style: solid;
-  border-color: lightslategray;
-  border-width: 5px;
-  border-radius: 10px;
+    border-style: solid;
+    border-color: lightskyblue;
+    border-width: 5px;
+    border-radius: 10px;
 }
 
 .header-title,
 .header-score {
-  width: 50%;
+    width: 50%;
 }
 
 .header-score {
-  text-align: left;
+    text-align: left;
 }
 
 .grid-container {
-  display: grid;
-  grid-template-columns: auto auto auto auto;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
 
-  padding-left: 25px;
-  padding-top: 15px;
-  padding-bottom: 10px;
+    padding-left: 25px;
+    padding-top: 15px;
+    padding-bottom: 10px;
 
-  border-style: solid;
-  border-color: lightslategray;
-  border-width: 5px;
-  border-radius: 10px;
+    border-style: solid;
+    border-color: lightskyblue;
+    border-width: 5px;
+    border-radius: 10px;
 }
 .grid-item {
-  padding: 1%;
-  width: 24%;
+    padding: 1%;
+    width: 24%;
 
-  background-color: lightsalmon;
+    background-color: gainsboro;
 }
 
 .img {
-  height: 140px;
-  border-style: solid;
-  border-color: lightslategray;
-  border-width: 0px;
-  border-radius: 10px;
+    height: 140px;
+    border-style: solid;
+    border-color: lightskyblue;
+    border-width: 0px;
+    border-radius: 10px;
+    outline: none;
 }
 
 button {
-  border: 2px solid lightslategray;
+    border: 5px solid gray;
+    outline: none;
+    opacity: 90%;
+}
+
+.buttonBorder {
+    border-radius: 10px;
+    outline: none;
+
+    background-color: white;
+    color: black;
+    padding: 1%;
+    width: 24%;
+
+    background-color: lightblue;
+
+    border: 5px solid lightgreen;
 }
 h1,
 h2 {
-  font-family: "Lucida Console", Courier, monospace;
-  color: #484848;
-  font-size: 3rem;
-  font-weight: bold;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  padding-left: 10px;
-  text-align: left;
-  /*width: 50%;*/
+    font-family: "Lucida Console", Courier, monospace;
+    color: #484848;
+    font-size: 3rem;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    text-align: left;
+    /*width: 50%;*/
 }
 
 h2 {
-  font-style: italic;
-  font-size: 30px;
+    font-style: italic;
+    font-size: 30px;
 }
 #h2user {
-  font-size: 20px;
-}
-#userName {
-  color: dodgerblue;
+    font-size: 20px;
 }
 
 #score,
+#category,
+#time,
+#userName {
+    color: dodgerblue;
+}
+
 #category {
-  color: dodgerblue;
+    width: 40%;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 5px;
+    background-color: lightgray;
+    color: dodgerblue;
+    border: 2px solid gray;
+    outline: none;
 }

@@ -1,11 +1,16 @@
-var dir = "sports";
+var dir = "cats";
 var winCounter = 0;
-const winArray = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-const randomArray = randomImages();
+var winArray = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+var randomArray = randomImages();
 var game = 0;
 var pick1 = 0;
 var pick2 = 0;
-console.log(randomArray);
+
+setStoraged("Carrillo","0.0");
+loadStoraged();
+
+
+
 function randomImages() {
   const array = [1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8];
   
@@ -14,6 +19,7 @@ function randomImages() {
 }
 function flipUp(location) {
   var cardsList = document.getElementById("Cards_List").children;
+  
   var board = [];
   
   for (let index = 0; index < cardsList.length; index++) {
@@ -21,6 +27,11 @@ function flipUp(location) {
   }
   
   board[location].src = `assets/media/${dir}/${randomArray[location]}.png`;
+ var button = cardsList[location];
+ 
+ button.setAttribute("class","buttonBorder");
+ 
+
 }
 function flipDown(location) {
   var cardsList = document.getElementById("Cards_List").children;
@@ -31,12 +42,21 @@ function flipDown(location) {
   }
   
   board[location].src = `assets/media/back.png`;
+  var button = cardsList[location];
+ 
+ button.setAttribute("class","grid-item");
 }
 function checkGame() {
   if (randomArray[pick1] == randomArray[pick2]) {
     winArray[pick1] = 1;
     winArray[pick2] = 1;
-    console.log(winArray);
+   
+    var cardsList = document.getElementById("Cards_List").children;
+    cardsList[pick1].disabled =true;
+    cardsList[pick2].disabled =true;
+    
+    
+
     checkifWin();
   } else {
     flipDown(pick1);
@@ -52,69 +72,78 @@ function checkifWin(){
 
     
   });
-  console.log(counter);
+    
+  if(counter==16){
+    console.log("You Won!!");
+
+    var userName = document.getElementById("userName").textContent;
+    var userTime = document.getElementById("time").textContent;
+    document.getElementById("time").hidden = true;
+    setStoraged(userName,userTime);
+  }
+ 
+}
+
+
+
+$("#category").change(function(){
   
-if(counter==16){
-  console.log("you Won");
+ dir = document.getElementById("category").value;
 
- 
- var userName = document.getElementById("userName").textContent;
+ randomArray = randomImages();
+ document.getElementById("category").disabled=true;
 
- setStoraged(userName);
-
-}
- 
-
-}
+});
 
 
 
-/*
+//Storage Functions
 function loadStoraged(){
 
   if(JSON.parse(localStorage.getItem("users"))){
-      var storedTasks = JSON.parse(localStorage.getItem("users"));
-       
+      var storedUsers = JSON.parse(localStorage.getItem("users"));
+      var userName = document.getElementById("userName");
+      userName.textContent= storedUsers[0].name;
   }
-      
   else
       console.log("not storaged");
-
-  
 }
-*/
 
-// set the local storage the value 
-function setStoraged(usertosave){
+function setStoraged(usertosave,timetosave){
   
-
   if(JSON.parse(localStorage.getItem("users")))
       var users = JSON.parse(localStorage.getItem("users"));
   else
       var users = [];
 
+      var user={
+        name: usertosave,
+        time: timetosave
+      };
 
-  users.push(usertosave);
+  users[0]=user;
   localStorage.setItem("users", JSON.stringify(users));
 
 }
 
-
-//clear the local storage
-function clearTasks(){
+function clearStorage(){
 
   var tasks = JSON.parse(localStorage.getItem("users"));
   tasks= [];
-
   localStorage.setItem("users", JSON.stringify(tasks));
 
 }
+//Storage Functions
+
+
+
+
+
 
 $(function () {
   $(".grid-item").on("click", function (event) {
     event.preventDefault();
    
-    
     flipUp(event.target.id);
     game++;
     
