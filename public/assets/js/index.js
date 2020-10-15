@@ -65,6 +65,8 @@ $(function () {
       console.log("New User Sent");
       $('#new-account-form').each(function(){
         this.reset();
+        console.log(result);
+
       });
       $(".create-modal").css("display", "none");
       goToGame();
