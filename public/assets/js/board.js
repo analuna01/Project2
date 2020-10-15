@@ -99,6 +99,7 @@ $("#category").change(function(){
 
  randomArray = randomImages();
  document.getElementById("category").disabled=true;
+ timeReset();
 
 });
 
