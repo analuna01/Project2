@@ -5,6 +5,7 @@
 // Dependencies
 // =============================================================
 var path = require("path");
+var lead = require("./api-routes");
 
 // Routes
 // =============================================================
@@ -17,7 +18,10 @@ module.exports = function (app) {
   });
   
   app.get("/leaderboard", function (req, res) {
-    res.render("leaderboard");
+    
+    res.render("leaderboard", {
+      users: array,
+    });
   });
 
   app.get("/gameboard", function (req, res) {
