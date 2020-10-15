@@ -1,5 +1,6 @@
 // Timer
-var time = 0;
+
+  var time = 0;
 var running = 0;
 
 function start() {
@@ -29,5 +30,7 @@ function increment() {
   }
 };
 
-
 start();
+
+
+

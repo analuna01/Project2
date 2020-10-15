@@ -31,6 +31,7 @@ function flipUp(location) {
  
  button.setAttribute("class","buttonBorder");
  
+ 
 
 }
 function flipDown(location) {
@@ -92,6 +93,7 @@ $("#category").change(function(){
 
  randomArray = randomImages();
  document.getElementById("category").disabled=true;
+
 
 });
 
