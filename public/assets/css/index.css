@@ -37,7 +37,7 @@ section {
 
 #quote{
   text-align: center;
-  font-family: 'Exo 2';font-size: 30px;
+  font-family: 'Asap Condensed';font-size: 30px;
 }
 
 #about {
@@ -73,6 +73,8 @@ section {
 
 .footer .footer-content {
   height: 180px;
+  width: 100%;
+  margin: 0px;
   display: flex;
   color: whitesmoke;
   padding-left: 20px;
@@ -102,6 +104,12 @@ section {
   float: right;
   padding-right: 150px;
   padding-bottom: 80px;
+}
+
+.wrapper {
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
 }
 
 .landing {
@@ -167,7 +175,7 @@ li {
 }
   
 .modal-content {
-  background-color: #fefefe;
+  background-color: rgb(101, 152, 185);
   margin: auto;
   padding: 20px;
   border: 1px solid #888;
