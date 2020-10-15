@@ -23,6 +23,8 @@ const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-acce
 app.use(helmet.contentSecurityPolicy({
   directives: {
     scriptSrc: ["'self'", "code.jquery.com"],
+    styleSrc: ["'self'", "https://fonts.googleapis.com"],
+    fontSrc: ["'self'", "https://fonts.gstatic.com"],
     defaultSrc: ["'self'"]
   }
 }));
