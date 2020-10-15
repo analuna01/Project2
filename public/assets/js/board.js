@@ -1,3 +1,7 @@
+// const running = require('./timer');
+// var start = require('./timer');
+// var reset = require('./timer');
+
 var dir = "flags";
 var winCounter = 0;
 var winArray = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
@@ -10,7 +14,6 @@ setStoraged("Carrillo","0.0");
 loadStoraged();
 
 
-
 function randomImages() {
   const array = [1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8];
   
@@ -19,6 +22,10 @@ function randomImages() {
 }
 function flipUp(location) {
   var cardsList = document.getElementById("Cards_List").children;
+
+  if (!running) {
+    start();
+  }
   
   var board = [];
   
@@ -27,9 +34,9 @@ function flipUp(location) {
   }
   
   board[location].src = `assets/media/${dir}/${randomArray[location]}.png`;
- var button = cardsList[location];
+  var button = cardsList[location];
  
- button.setAttribute("class","buttonBorder");
+  button.setAttribute("class","buttonBorder");
  
 
 }
@@ -167,3 +174,36 @@ $(function () {
     }
   });
 });
+
+
+
+var time = 0;
+var running = false;
+
+function start() {
+ 
+    running = true;
+    increment();
+   
+}
+
+function reset() {
+  running = false;
+  time = 0;
+  document.getElementById("startBtn").innerHTML = "Start";
+}
+
+function increment() {
+  if (running) {
+    setTimeout(function () {
+      time++;
+      var mins = Math.floor(time / 600);
+      var secs = Math.floor(time / 10) % 60;
+      
+      var milliSecs = time % 10;
+      document.getElementById("time").innerHTML =  mins + "." + secs + "." + milliSecs;
+      increment();
+
+    }, 100)
+  }
+};
