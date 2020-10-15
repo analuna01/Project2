@@ -10,7 +10,7 @@ var game = 0;
 var pick1 = 0;
 var pick2 = 0;
 
-setStoraged("Carrillo","0.0");
+// setStoraged("Carrillo","0.0");
 loadStoraged();
 
 

@@ -65,8 +65,8 @@ $(function () {
       console.log("New User Sent");
       $('#new-account-form').each(function(){
         this.reset();
-        console.log(result);
-
+        clearStorage();
+        setStoraged(result.username, "0");
       });
       $(".create-modal").css("display", "none");
       goToGame();
@@ -110,8 +110,9 @@ $(function () {
       type: "POST",
       data: existingUser,
     }).then(function (result) {
-
-      console.log("User Logged in as: \n" + JSON.stringify(result));
+      clearStorage();
+      setStoraged(result.username, "0");
+      
       $(".login-modal").css("display", "none");
       $('#login-form').each(function(){
         this.reset();
@@ -159,5 +160,30 @@ $(function () {
     event.preventDefault();
     goToLeaderboard();
   });
+
+  function setStoraged(usertosave,timetosave){
+  
+    if(JSON.parse(localStorage.getItem("users")))
+        var users = JSON.parse(localStorage.getItem("users"));
+    else
+        var users = [];
+  
+        var user={
+          name: usertosave,
+          time: timetosave
+        };
+  
+    users[0]=user;
+    localStorage.setItem("users", JSON.stringify(users));
+  
+  }
+
+  function clearStorage(){
+
+    var tasks = JSON.parse(localStorage.getItem("users"));
+    tasks= [];
+    localStorage.setItem("users", JSON.stringify(tasks));
+  
+  }
 
 });
