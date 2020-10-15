@@ -1,4 +1,4 @@
-var dir = "cats";
+var dir = "flags";
 var winCounter = 0;
 var winArray = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 var randomArray = randomImages();
