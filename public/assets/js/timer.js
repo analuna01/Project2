@@ -1,28 +1,29 @@
 // Timer
 var time = 0;
-var running = 0;
+var running = false;
 
 function start() {
  
-    running = 1;
+    running = true;
     increment();
    
 }
 
 function reset() {
-  running = 0;
+  running = false;
   time = 0;
   document.getElementById("startBtn").innerHTML = "Start";
 }
 
 function increment() {
-  if (running == 1) {
+  if (running) {
     setTimeout(function () {
       time++;
-     // var mins = Math.floor(time / 60);
-      var secs = Math.floor(time / 10);
+      var mins = Math.floor(time / 600);
+      var secs = Math.floor(time / 10) % 60;
+      
       var milliSecs = time % 10;
-      document.getElementById("time").innerHTML =  + secs + "." + milliSecs;
+      document.getElementById("time").innerHTML =  mins + "." + secs + "." + milliSecs;
       increment();
 
     }, 100)
