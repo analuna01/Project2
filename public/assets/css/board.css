@@ -1,5 +1,10 @@
 body {
     height: 100%;
+    background-image: none;
+}
+
+section {
+    margin: 0px;
 }
 
 .bg {
