@@ -35,9 +35,14 @@ section {
   border-color: black; */
 }
 
+#title{
+  color: whitesmoke;
+}
+
 #quote{
+  color: black;
   text-align: center;
-  font-family: 'Exo 2';font-size: 30px;
+  font-family: 'Asap Condensed';font-size: 40px;
 }
 
 #about {
@@ -73,6 +78,8 @@ section {
 
 .footer .footer-content {
   height: 180px;
+  width: 100%;
+  margin: 0px;
   display: flex;
   color: whitesmoke;
   padding-left: 20px;
@@ -104,6 +111,12 @@ section {
   padding-bottom: 80px;
 }
 
+.wrapper {
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
 .landing {
   text-align: center;
 }
@@ -111,7 +124,7 @@ section {
 button {
 background-color: #4CAF50; /* Green */
 border: none;
-border-radius: 10px;
+border-radius: 5px;
 color: white;
 padding: 15px 32px;
 text-align: center;
@@ -167,13 +180,14 @@ li {
 }
   
 .modal-content {
-  background-color: #fefefe;
+  background-color: rgb(101, 152, 185);
   margin: auto;
   padding: 20px;
   border: 1px solid #888;
   width: 25%;
   height: max-content;
   text-align: center;
+  position: sticky;
 }
 
 label {
