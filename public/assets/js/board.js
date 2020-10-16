@@ -10,7 +10,11 @@ var game = 0;
 var pick1 = 0;
 var pick2 = 0;
 
+<<<<<<< HEAD
+
+=======
 // setStoraged("Carrillo","0.0");
+>>>>>>> 1d009af756006025ed70236678cde64882f15a18
 loadStoraged();
 
 
@@ -37,6 +41,7 @@ function flipUp(location) {
   var button = cardsList[location];
  
   button.setAttribute("class","buttonBorder");
+ 
  
 
 }
@@ -87,6 +92,22 @@ function checkifWin(){
     var userTime = document.getElementById("time").textContent;
     document.getElementById("time").hidden = true;
     setStoraged(userName,userTime);
+
+
+
+    var user={
+      username: userName,
+      time: userTime
+    };
+
+    $.ajax("/api/leaderboard", {
+      type: "POST",
+      data: user,
+    }).then(function (result) {
+      console.log("Leaderboard Saved");
+      
+    });
+
   }
  
 }
@@ -100,6 +121,7 @@ $("#category").change(function(){
  randomArray = randomImages();
  document.getElementById("category").disabled=true;
  timeReset();
+
 
 });
 
