@@ -1,4 +1,3 @@
-
 var dir = "flags";
 var winCounter = 0;
 var winArray = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
@@ -6,8 +5,6 @@ var randomArray = randomImages();
 var game = 0;
 var pick1 = 0;
 var pick2 = 0;
-
-
 
 loadStoraged();
 
