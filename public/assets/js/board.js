@@ -1,7 +1,3 @@
-// const running = require('./timer');
-// var start = require('./timer');
-// var reset = require('./timer');
-
 var dir = "flags";
 var winCounter = 0;
 var winArray = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
@@ -10,11 +6,6 @@ var game = 0;
 var pick1 = 0;
 var pick2 = 0;
 
-<<<<<<< HEAD
-
-=======
-// setStoraged("Carrillo","0.0");
->>>>>>> 1d009af756006025ed70236678cde64882f15a18
 loadStoraged();
 
 

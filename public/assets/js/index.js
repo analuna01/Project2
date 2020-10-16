@@ -1,7 +1,7 @@
 
 $(function () {
   clearStorage();
-  
+
   // Display account create modal on click
   $("#create-account-button").on("click", function (event) {
     event.preventDefault();
@@ -154,6 +154,7 @@ $(function () {
   // Play without account
   $("#play-button").click(function (event) {
     event.preventDefault();
+    setStoraged("Guest", "0");
     goToGame();
   });
   
