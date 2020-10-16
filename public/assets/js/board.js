@@ -1,7 +1,3 @@
-// const running = require('./timer');
-// var start = require('./timer');
-// var reset = require('./timer');
-
 var dir = "flags";
 var winCounter = 0;
 var winArray = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
@@ -115,7 +111,7 @@ $("#category").change(function(){
 
  randomArray = randomImages();
  document.getElementById("category").disabled=true;
- timeReset();
+ 
 
 
 });
@@ -205,11 +201,7 @@ function start() {
    
 }
 
-function reset() {
-  running = false;
-  time = 0;
-  document.getElementById("startBtn").innerHTML = "Start";
-}
+
 
 function increment() {
   if (running) {
