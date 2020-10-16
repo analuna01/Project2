@@ -113,7 +113,7 @@ $("#category").change(function(){
 
  randomArray = randomImages();
  document.getElementById("category").disabled=true;
- timeReset();
+ 
 
 
 });
@@ -212,11 +212,7 @@ function start() {
    
 }
 
-function reset() {
-  running = false;
-  time = 0;
-  document.getElementById("startBtn").innerHTML = "Start";
-}
+
 
 function increment() {
   if (running) {
