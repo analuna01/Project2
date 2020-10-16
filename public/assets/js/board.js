@@ -93,12 +93,14 @@ function checkifWin(){
       time: userTime
     };
 
+    console.log(user);
+
     $.ajax("/api/leaderboard", {
       type: "POST",
       data: user,
     }).then(function (result) {
       console.log("Leaderboard Saved");
-      
+      goToLeaderboard();
     });
 
   }
@@ -191,7 +193,16 @@ $(function () {
   });
 });
 
-
+function goToLeaderboard() {
+  $.ajax("/api/leaderboard", {
+    type: "GET",
+  }).then(function(results) {
+    window.location.href = "/api/leaderboard";
+    console.log('Results Below:');
+    console.log(results);
+    return results;
+  });
+}
 
 var time = 0;
 var running = false;
