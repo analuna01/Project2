@@ -84,6 +84,8 @@ function checkifWin(){
     document.getElementById("time").hidden = true;
     setStoraged(userName,userTime);
 
+    alert("You Won!!  Time:"+userTime);
+
 
 
     var user={
