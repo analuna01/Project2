@@ -1,5 +1,7 @@
 
 $(function () {
+  clearStorage();
+  
   // Display account create modal on click
   $("#create-account-button").on("click", function (event) {
     event.preventDefault();
