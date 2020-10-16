@@ -10,7 +10,7 @@ var game = 0;
 var pick1 = 0;
 var pick2 = 0;
 
-setStoraged("Carrillo","0.0");
+
 loadStoraged();
 
 
@@ -88,6 +88,22 @@ function checkifWin(){
     var userTime = document.getElementById("time").textContent;
     document.getElementById("time").hidden = true;
     setStoraged(userName,userTime);
+
+
+
+    var user={
+      username: userName,
+      time: userTime
+    };
+
+    $.ajax("/api/leaderboard", {
+      type: "POST",
+      data: user,
+    }).then(function (result) {
+      console.log("Leaderboard Saved");
+      
+    });
+
   }
  
 }
