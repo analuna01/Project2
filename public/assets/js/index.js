@@ -67,7 +67,7 @@ $(function () {
       console.log("New User Sent");
       $('#new-account-form').each(function(){
         this.reset();
-        clearStorage();
+        // clearStorage();
         setStoraged(result.username, "0");
       });
       $(".create-modal").css("display", "none");
@@ -112,8 +112,6 @@ $(function () {
       type: "POST",
       data: existingUser,
     }).then(function (result) {
-      clearStorage();
-      setStoraged(result.username, "0");
       
       $(".login-modal").css("display", "none");
       $('#login-form').each(function(){
@@ -121,6 +119,7 @@ $(function () {
       });
       try {
         if (result[0].username === username && result[0].password === password) {
+          setStoraged(result.username, "0");
           goToGame();
         }
       } catch (error) {
