@@ -35,9 +35,14 @@ section {
   border-color: black; */
 }
 
+#title{
+  color: whitesmoke;
+}
+
 #quote{
+  color: black;
   text-align: center;
-  font-family: 'Asap Condensed';font-size: 30px;
+  font-family: 'Asap Condensed';font-size: 40px;
 }
 
 #about {
@@ -119,7 +124,7 @@ section {
 button {
 background-color: #4CAF50; /* Green */
 border: none;
-border-radius: 10px;
+border-radius: 5px;
 color: white;
 padding: 15px 32px;
 text-align: center;
@@ -182,6 +187,7 @@ li {
   width: 25%;
   height: max-content;
   text-align: center;
+  position: sticky;
 }
 
 label {
